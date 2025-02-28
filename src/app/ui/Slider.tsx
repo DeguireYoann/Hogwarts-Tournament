@@ -18,7 +18,7 @@ export default function HouseSection() {
     },
   };
 
-  const imgStyles = ['top-[-50px] left-1.5 ', 'bottom-[-50px] left-2/5', 'top-1/8 right-1.5'];
+  const imgStyles = ['top-[-50px] left-1.5 ', 'bottom-[-50px] left-2/5', 'top-[30px] right-1.5'];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
@@ -28,7 +28,7 @@ export default function HouseSection() {
   };
 
   return (
-    <div className="relative flex w-full h-[80vh] justify-center items-center md:px-5 md:space-x-5" onMouseMove={handleMouseMove}>
+    <div className="relative flex w-full h-[80vh] justify-center items-center md:space-x-5" onMouseMove={handleMouseMove}>
       <div
         className={`relative flex justify-center h-full items-center sm:w-full md:w-1/2 p-6 ${house === 'gryffondor' ? 'bg-red-800': 'bg-green-800'} shadow-lg rounded-md`}
         style={{
@@ -37,7 +37,7 @@ export default function HouseSection() {
           backgroundBlendMode: "multiply",
         }}
       >
-        <h2 className="font-extrabold text-6xl z-50">{houses[house]} points</h2>
+        <h2 className="font-extrabold text-6xl z-50 text-white">{houses[house]} points</h2>
         <img src={`/images/${house}-logo.png`} className="absolute opacity-25 z-20" />
       </div>
 

@@ -4,6 +4,7 @@ import { AuthProvider } from "@/app/context/Auth";
 import "./globals.css";
 import { HogwartsProvider } from "./context/Hogwarts";
 import Header from "@/app/ui/Header";
+import Footer from "./ui/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <HogwartsProvider>
             <Header/>
             {children}
+            <Footer/>
           </HogwartsProvider>
         </AuthProvider>
       </body>
