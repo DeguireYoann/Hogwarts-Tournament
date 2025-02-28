@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "@/app/context/Auth";
 import "./globals.css";
 import { HogwartsProvider } from "./context/Hogwarts";
+import Header from "@/app/ui/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <AuthProvider>
           <HogwartsProvider>
+            <Header/>
             {children}
           </HogwartsProvider>
         </AuthProvider>

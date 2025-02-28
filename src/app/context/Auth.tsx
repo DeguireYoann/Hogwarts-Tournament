@@ -27,6 +27,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const result = await signInWithPopup(auth, provider);
       setUser(result.user);
+
+      if(result.user) {
+        const token = await result.user.getIdToken();
+        console.log(token);
+      }
     } catch (error) {
       console.error("Login failed:", error);
     }
