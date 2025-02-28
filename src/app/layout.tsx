@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AuthProvider } from "@/app/context/Auth";
 import "./globals.css";
+import { HogwartsProvider } from "./context/Hogwarts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          <HogwartsProvider>
+            {children}
+          </HogwartsProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -33,6 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Firebase
+firebase-debug.log
+firebase-debug.*
+
 # vercel
 .vercel
 
