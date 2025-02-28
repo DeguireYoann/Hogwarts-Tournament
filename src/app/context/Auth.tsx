@@ -18,17 +18,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-
-    return () => unsubscribe();
   }, []);
 
   const login = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log("User logged in:", result.user);
       setUser(result.user);
     } catch (error) {
       console.error("Login failed:", error);
