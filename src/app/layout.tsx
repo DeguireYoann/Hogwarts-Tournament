@@ -9,6 +9,7 @@ import Footer from "../ui/Footer";
 
 const pirata = Pirata_One({
   weight: "400",
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
