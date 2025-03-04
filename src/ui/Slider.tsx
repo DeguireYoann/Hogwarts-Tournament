@@ -1,6 +1,6 @@
 "use client";
 
-import { useHogwarts } from "@/app/context/Hogwarts";
+import { useHogwarts } from "@/context/Hogwarts";
 import { useState } from "react";
 
 export default function HouseSection() {
@@ -37,11 +37,11 @@ export default function HouseSection() {
           backgroundBlendMode: "multiply",
         }}
       >
-        <h2 className="font-extrabold text-6xl z-50 text-white">{houses[house]} points</h2>
+        <h2 className="font-extrabold text-6xl z-40 text-white">{houses[house]} points</h2>
         <img src={`/images/${house}-logo.png`} className="absolute opacity-25 z-20" />
       </div>
 
-      <div className="absolute hidden md:flex flex-col m-auto space-y-5 z-50">
+      <div className="absolute hidden md:flex flex-col m-auto space-y-5 z-40">
           <button
             onClick={() => setHouse('gryffondor')}
             className="relative w-[75px] h-[75px] bg-red-800 border-red-800 overflow-clip rounded-full p-2 flex justify-center items-center border-4"
@@ -56,7 +56,7 @@ export default function HouseSection() {
           </button>
       </div>
 
-      <div className="relative justify-center items-center hidden h-full md:w-1/2 md:flex p-6 bg-gradient-to-bl from-white to-gray-300 shadow-lg rounded-md">
+      <div className="relative md:flex justify-center items-center hidden md:w-1/2 h-full p-6 bg-gradient-to-bl from-white to-gray-300 shadow-lg rounded-md">
         <p className="font-bold text-2xl text-gray-900 mx-5 z-40">
           {house === "gryffondor"
             ? "Gryffondor valorise le courage, la bravoure et la détermination."

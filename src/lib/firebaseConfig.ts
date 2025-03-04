@@ -19,5 +19,6 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 const housesDoc = doc(db, 'hogwarts', 'houses')
+const teachersDoc = doc(db, 'hogwarts', 'teachers')
 
-export { db, housesDoc, auth, provider, signInWithPopup, signOut };
+export { db, housesDoc, teachersDoc, auth, provider, signInWithPopup, signOut };

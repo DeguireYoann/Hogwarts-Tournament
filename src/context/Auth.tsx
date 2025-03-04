@@ -6,16 +6,19 @@ import { onAuthStateChanged, User } from "firebase/auth";
 
 const AuthContext = createContext<{
   user: User | null;
+  isAdmin: boolean;
   login: () => Promise<void>;
   logout: () => Promise<void>;
 }>({
   user: null,
+  isAdmin: false,
   login: async () => {},
   logout: async () => {},
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmIn] = useState<boolean>(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -29,8 +32,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setUser(result.user);
 
       if(result.user) {
-        const token = await result.user.getIdToken();
-        console.log(token);
+        const token = await result.user.getIdToken(); 
+        const response = await fetch('api/auth', {
+          method: 'POST',
+          body: JSON.stringify({ token })
+        })
+
+        const data = await response.json();
+        setIsAdmIn(data.isAdmin);
       }
     } catch (error) {
       console.error("Login failed:", error);
@@ -47,7 +56,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, isAdmin, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
