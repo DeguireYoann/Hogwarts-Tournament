@@ -10,7 +10,6 @@ if (!admin.apps.length) {
 
 
 export async function POST(req: Request) {
-	console.log(serviceAccount);
 	const { token } = await req.json();
 
 	try {

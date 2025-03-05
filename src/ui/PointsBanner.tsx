@@ -24,7 +24,11 @@ export default function PointsBanner() {
 
 	return(
 		<div className="flex flex-col justify-center items-center bg-[#181818] border-b-1 ">
-			<h2 className="text-3xl  py-3 border-b-1 "><strong className={`${winningHouse === 'Gryffondor' ? 'text-red-700' : 'text-green-700'}`}>{winningHouse}</strong> est en avance</h2>
+			{houses.gryffondor != houses.slytherin ? (
+				<h2 className="text-3xl  py-3 border-b-1 "><strong className={`${winningHouse === 'Gryffondor' ? 'text-red-700' : 'text-green-700'}`}>{winningHouse}</strong> est en avance</h2>
+			):(
+				<h2 className="text-3xl  py-3 border-b-1 ">Égalité</h2>
+			)}
 			<div className="flex flex-col h-[80vh] md:h-[10em] w-full md:flex-row shadow-lg ">
 				<div className="relative flex flex-col justify-center items-center flex-1 border-b-1 md:border-b-0 md:border-r-1  bg-no-repeat bg-left bg-contain overflow-clip">
 					<img src="/images/gryffondor-logo.png" className="absolute saturate-0 right-[-100px] top-0 opacity-30 w-[250px]"/>
