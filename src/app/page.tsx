@@ -1,18 +1,17 @@
-import PointsBanner from "@/ui/PointsBanner";
-import Slider from "../ui/Slider";
-import VideoBanner from "../ui/VideoBanner";
+import PointsBanner from '@/ui/PointsBanner';
+import HousesBanner from '@/ui/HousesBanner';
 
 
 export default function Home() {
-  return (
-    <div className="flex flex-col space-y-6">
-      <VideoBanner />
-      <div className="container mx-auto">
-      <PointsBanner />
-      <div className="hidden md:block">
-        <Slider/>
-      </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="flex flex-col">
+			<div className="h-[100vh] flex justify-center items-center aligns-center">
+				<h1 className="text-8xl ">Championnat</h1>
+			</div>
+			<div className="container mx-auto">
+				<PointsBanner />
+				<HousesBanner/>
+			</div>
+		</div>
+	);
 }
