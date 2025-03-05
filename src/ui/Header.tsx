@@ -34,9 +34,6 @@ export default function Header() {
 						<Link href="/" className="hover:underline">Accueil</Link>
 					</li>
 					<li>
-						<Link href="/points" className="hover:underline">Points</Link>
-					</li>
-					<li>
 						{user ? (
 							<button onClick={logout} className="hover:underline cursor-pointer">Déconnexion</button>
 						): (

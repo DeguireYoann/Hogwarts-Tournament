@@ -21,9 +21,6 @@ export default function Footer() {
 							<Link href="/" className="hover:underline me-4 md:me-6">Accueil</Link>
 						</li>
 						<li>
-							<Link href="/points" className="hover:underline me-4 md:me-6">Points</Link>
-						</li>
-						<li>
 							{user ? (
 								<button onClick={logout} className="hover:underline cursor-pointer">Déconnexion</button>
 							): (
