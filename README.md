@@ -24,11 +24,15 @@ Hogwarts Tournament is a **Next.js** web application designed for a friendly com
 git clone https://github.com/yourusername/hogwarts-tournament.git
 cd hogwarts-tournament
 npm install
-cp .env.example .env  # Add your Firebase credentials
+cp .env.example .env  # Copy the environment variables example file
+# Open .env and add your Firebase credentials
 npm run dev
 ```
 
+## 🛠 Setting an Admin
+- In order to set an admin, you will need to run the command setAdmin <USER_UID>
+
 ## 🏗️ Future Improvements  
 - Add support for all four Hogwarts houses  
-- Implement leaderboard history  
-- Enhance UI with animations  
+- Enhance UI with animations
+- Add a chatbox to interact with Tom Riddle.

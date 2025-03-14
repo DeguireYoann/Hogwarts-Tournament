@@ -21,6 +21,7 @@ body {
   color: #ececec;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  border-color: #ececec;
 }
 
 .banner-video {
